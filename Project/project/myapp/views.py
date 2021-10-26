@@ -8,3 +8,5 @@ from django.contrib import messages
 
 def index(request):
     return render(request, 'myapp/home.html')
+
+#tien test git hub....
