@@ -37,25 +37,29 @@
       </div>
     </header>
 
-    <div class="container">
+    <div class="container__login">
       <div class="grid">
-        <div class="container-main">
-          <div class="container-main__Header">
-            <div class="container__title">
-              <h3>Nhóm abcxyz</h3>
+        <form action="">
+          <div class="container-login">
+            <div class="container-login__Header">
+              <h1>Login From</h1>
             </div>
-            <div class="container__message">
-             <h1> Chào mừng <br>
-                  Mọi Người Đến Với Blog
-            </h1>
+            <div class="container-login__input">
+              <input type="text" name="name" required  placeholder="Enter your Name" class="input__form-control">
+              <input type="Password" name="password" placeholder="Password"   class="input__form-control" style="
+              margin-bottom: 0rem;">
+              <a href="#" class="input__form-text ">Forgot Password</a>
             </div>
-            <button class="container__button button" type="button">
-             <a href="http://127.0.0.1:5500/home.html"> Read More</a>
+            <button  class="container-login__button button" type="submit" value="Login">
+              <a href="http://127.0.0.1:5500/home.html"> Login
+            </a>
             </button>
+            <div class="container-login__footer">
+              <spam>Not a member?</spam>
+              <a href="http://127.0.0.1:5500/signup.html" >Sign Up</a>
+            </div>
           </div>
-          <img class="container-main__img" src=".//assets/img/main.png" alt="">
-
-        </div>
+        </form>
       </div>
     </div>
 

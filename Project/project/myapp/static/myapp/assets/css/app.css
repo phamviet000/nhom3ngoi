@@ -1,3 +1,6 @@
+a {
+  text-decoration: none;
+}
 body {
   background-image: linear-gradient(
     to bottom right,
@@ -65,7 +68,12 @@ body {
   background-color: #52b69a;
   color: var(--white-color);
 }
-
+.navbar-List__button1 a {
+  display: block;
+  padding: 1.5rem 3rem;
+  color: var(--white-color);
+  text-decoration: none;
+}
 .navbar-List__button1:hover {
   background-color: #6ed475;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
@@ -75,7 +83,12 @@ body {
   background-color: #bb4a4c;
   color: var(--white-color);
 }
-
+.navbar-List__button2 a {
+  display: block;
+  padding: 1.5rem 3rem;
+  color: var(--white-color);
+  text-decoration: none;
+}
 .navbar-List__button2:hover {
   background-color: #dd1b1f;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
@@ -90,7 +103,7 @@ body {
   align-items: center;
 }
 .container-main__img {
-  width: 539px;
+  width: 50rem;
 }
 .container__title {
   color: var(--white-color);
@@ -118,8 +131,74 @@ body {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 .container__button a {
+  display: block;
+  padding: 1.5rem 3rem;
   color: var(--white-color);
   text-decoration: none;
+}
+
+/* ------------  Login - Sign up -------------------- */
+.container__login {
+  z-index: 1;
+  position: relative;
+  height: 60rem;
+  margin-top: 10rem;
+}
+.container-login {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 3rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container-login__Header {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.container-login__input {
+  width: 100%;
+}
+.input__form-control {
+  border-radius: 0.5rem;
+  display: block;
+  width: 100%;
+  padding: 2rem 2rem;
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+.input__form-text {
+  display: inline-block;
+  font-size: 1.5rem;
+  margin: 1.5rem 0;
+  text-decoration: none;
+}
+
+.container-login__footer {
+  font-size: 1.5rem;
+  margin-top: 2.6rem;
+  text-decoration: none;
+}
+
+.container-login__button {
+  font-size: 2rem;
+  background-color: blueviolet;
+  width: 100%;
+}
+.container-login__button a {
+  display: block;
+  padding: 1.5rem 3rem;
+  cursor: pointer;
+  color: var(--white-color);
+}
+.container-login__button:hover {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  opacity: 0.9;
 }
 
 /* ------------  FOOTER -------------------- */
