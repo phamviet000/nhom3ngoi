@@ -50,18 +50,18 @@
               <input type="text"  required  placeholder="Enter your Name" name ='tendangnhap'class="input__form-control">
               <input type="Password"  placeholder="Password"   name ='password' class="input__form-control" style="
               margin-bottom: 0rem;">
-              {% for message in messages %}
+                    {% for message in messages %}
                     <div class="alert alert-success">
-                        <a class="close" href="#" data-dismiss="alert"></a>
-                        <b style="color:red;">{{ message }}</b>
+                      <a class="close" href="#" data-dismiss="alert"></a>
+                      <b style="color:red;">{{ message }}</b>
                     </div>
-              {% endfor %}
+                    {% endfor %}
               <a href="#" class="input__form-text ">Forgot Password</a>
             </div>
             <button  class="container-login__button button button-login" type="submit" value="login">Login</button>
             <div class="container-login__footer">
               <spam>Not a member?</spam>
-              <a href="#" >Sign Up</a>
+              <a href="{% url 'myapp:signup' %}" >Sign Up</a>
             </div>
           </div>
         </form>

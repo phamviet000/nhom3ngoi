@@ -35,7 +35,7 @@
                 <button class="navbar-List__button2 button"><a href="{% url 'myapp:logout' %}">Log out</a></button>
               {% else %}
                 <button class="navbar-List__button1 button"><a href="{% url 'myapp:login' %}">Sign In</a></button>
-                <button class="navbar-List__button2 button"><a href="#">Sign Up</a></button>
+                <button class="navbar-List__button2 button"><a href="{% url 'myapp:signup' %}">Sign Up</a></button>
 
               {% endif %}
           </div>
