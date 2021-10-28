@@ -250,3 +250,9 @@ body {
   color: var(--white-color);
   margin-top: 1rem;
 }
+.button-login {
+    padding: 12px;
+}
+.button-signup {
+    padding: 12px;
+}

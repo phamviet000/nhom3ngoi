@@ -24,14 +24,20 @@
 
           <ul class="navbar-List">
             <li class="navbar-List__item">
-              <a href="http://127.0.0.1:8000/home.html" class="navbar-List__item-link ">HOME</a>
+              <a href="{% url 'myapp:home' %}" class="navbar-List__item-link ">HOME</a>
               <a href="" class="navbar-List__item-link">BLOG</a>
             </li>
           </ul>
           <div class="navbar-List ">
             <div class="navbar-List__item1">
-            <button class="navbar-List__button1 button"><a href="{% url 'myapp:login' %}">Sign In</a></button>
-            <button class="navbar-List__button2 button"><a href="{% url 'myapp:signup' %}">Sign Up</a></button>
+              {% if user.username %}
+                <button class="navbar-List__button1 button"><a href="#">{{user.username}}</a></button>
+                <button class="navbar-List__button2 button"><a href="{% url 'myapp:logout' %}">Log out</a></button>
+              {% else %}
+                <button class="navbar-List__button1 button"><a href="{% url 'myapp:login' %}">Sign In</a></button>
+                <button class="navbar-List__button2 button"><a href="#">Sign Up</a></button>
+
+              {% endif %}
           </div>
           </div>
         </nav>
@@ -51,7 +57,7 @@
             </h1>
             </div>
             <button class="container__button button" type="button">
-             <a href="http://127.0.0.1:5500/home.html"> Read More</a>
+             <a href="#"> Read More</a>
             </button>
           </div>
           <img class="container-main__img" src="{% static 'myapp/img/main.png' %}" alt="">

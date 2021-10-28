@@ -24,8 +24,8 @@
 
           <ul class="navbar-List">
             <li class="navbar-List__item">
-              <a href="http://127.0.0.1:8000/home.html" class="navbar-List__item-link ">HOME</a>
-              <a href="" class="navbar-List__item-link">BLOG</a>
+              <a href="{% url 'myapp:home' %}" class="navbar-List__item-link ">HOME</a>
+              <a href="#" class="navbar-List__item-link">BLOG</a>
             </li>
           </ul>
           <div class="navbar-List ">
@@ -39,6 +39,7 @@
     </header>
     <div class="container__login">
       <div class="grid">
+        <form action="" class="login" method="post" >
         <div class="container-login">
           <div class="container-login__Header">
             <h1>Sign From</h1>
@@ -50,13 +51,11 @@
             <input type="Password" name="password" placeholder="Confirm Password"   class="input__form-control">
 
           </div>
-          <button href="http://127.0.0.1:5500/index.html" class="container-login__button button" type="button" >
-             <a href="http://127.0.0.1:5500/Login.html">Sign Up</a>
-           </button>
+          <button  class="container-login__button button button-signup" type="submit" value="Signup" >Sign Up</button>
 
 
-          </div>
         </div>
+        </form>
       </div>
     </div>
 

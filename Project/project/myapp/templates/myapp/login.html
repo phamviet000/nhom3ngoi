@@ -24,8 +24,8 @@
 
           <ul class="navbar-List">
             <li class="navbar-List__item">
-              <a href="http://127.0.0.1:8000/" class="navbar-List__item-link ">HOME</a>
-              <a href="" class="navbar-List__item-link">BLOG</a>
+              <a href="{% url 'myapp:home' %}" class="navbar-List__item-link ">HOME</a>
+              <a href="#" class="navbar-List__item-link">BLOG</a>
             </li>
           </ul>
           <div class="navbar-List ">
@@ -47,8 +47,8 @@
               <h1>Login From</h1>
             </div>
             <div class="container-login__input">
-              <input type="text" name="name" required  placeholder="Enter your Name" name ='tendangnhap'class="input__form-control">
-              <input type="Password" name="password" placeholder="Password"   name ='password' class="input__form-control" style="
+              <input type="text"  required  placeholder="Enter your Name" name ='tendangnhap'class="input__form-control">
+              <input type="Password"  placeholder="Password"   name ='password' class="input__form-control" style="
               margin-bottom: 0rem;">
               {% for message in messages %}
                     <div class="alert alert-success">
@@ -58,13 +58,10 @@
               {% endfor %}
               <a href="#" class="input__form-text ">Forgot Password</a>
             </div>
-            <button  class="container-login__button button" type="submit" value="Login">
-              <a href="http://127.0.0.1:8000/"> Login
-            </a>
-            </button>
+            <button  class="container-login__button button button-login" type="submit" value="login">Login</button>
             <div class="container-login__footer">
               <spam>Not a member?</spam>
-              <a href="{% url 'myapp:signup' %}" >Sign Up</a>
+              <a href="#" >Sign Up</a>
             </div>
           </div>
         </form>
