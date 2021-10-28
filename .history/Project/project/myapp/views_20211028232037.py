@@ -53,12 +53,7 @@ class LoginClass(View):
         if context['has_error']:
             return render(request, 'myapp/login.html', status=401, context=context)
         login(request, user)
-        # return redirect('myapp:account')
-        return redirect('myapp:home')
+        return redirect('myapp:account')
 
-
-def logoutuser(request):
-    logout(request)
-    return redirect('myapp:home')
 # tien test git hub....qeq
 # ewqeqw

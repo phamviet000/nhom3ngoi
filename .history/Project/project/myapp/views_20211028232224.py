@@ -56,9 +56,5 @@ class LoginClass(View):
         # return redirect('myapp:account')
         return redirect('myapp:home')
 
-
-def logoutuser(request):
-    logout(request)
-    return redirect('myapp:home')
 # tien test git hub....qeq
 # ewqeqw
