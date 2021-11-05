@@ -40,8 +40,16 @@
     <div class="container__login">
       <div class="grid">
 
-        <form action="" class="login" method="post" >
+        <form action="" class="singup" method="post" >
+
           {% csrf_token %}
+          {% if messages%}
+                {% for message in messages %}
+                 <div class="alert aleart-danger">
+                     <b style="color:red;">{{ message }}</b>
+                 </div>
+                {% endfor %}
+            {%endif %}
         <div class="container-login">
           <div class="container-login__Header">
             <h1>Sign From</h1>
@@ -51,13 +59,7 @@
             <input type="email" required  placeholder="Enter your Email" name = "email" value = "{{data.email}}" class="input__form-control">
             <input type="password" placeholder="Password" name="password" value = "{{data.password}}" class="input__form-control">
             <input type="Password"  placeholder="Confirm Password"  name="password2" value = "{{data.password2}}" class="input__form-control">
-          {% if messages%}
-                {% for message in messages %}
-                 <div class="alert aleart-danger">
-                     <b style="color:red;">{{ message }}</b>
-                 </div>
-                {% endfor %}
-            {%endif %}
+
           </div>
           <button  class="container-login__button button button-signup" type="submit" value="Signup" >Sign Up</button>
         </div>

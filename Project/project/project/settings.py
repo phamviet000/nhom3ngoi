@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import django_heroku
+from django.contrib import messages
 import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,9 +27,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-khx9mrfxhuvbjk99vn!!6yzbdeal@nf)1ungfvv65sgd^hg#vm'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -84,7 +85,16 @@ DATABASES = {
     }
 }
 
-
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'demo5',
+#         'USER': 'root',
+#         'PASSWORD': '',
+#         'HOST': 'localhost',
+#         'PORT': '3306'
+#     }
+# }
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -128,17 +138,25 @@ os.path.join(BASE_DIR,'static')
 
 EMAIL_HOST='smtp.gmail.com'
 EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST_USER='pcapabe@gmail.com'
-EMAIL_HOST_PASSWORD='Pcap1234'
+EMAIL_HOST_USER='nhom3nguoitest@gmail.com'
+EMAIL_HOST_PASSWORD='Nhom3nguoi@123'
 EMAIL_USE_TLS=True
 EMAIL_PORT=587
-DEFAULT_FROM_EMAIL='pcapabe@gmail.com'
+DEFAULT_FROM_EMAIL='nhom3nguoitest@gmail.com'
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+MESSAGE_TAGS={
+    messages.ERROR:'danger'
+}
+
+LOGIN_URL='login'
+LOGIN_REDIRECT_URL='account'
+LOGOUT_URL='logout'
+LOGOUT_REDIRECT_URL='login'
 AUTH_USER_MODEL = "myapp.MyUser"
-django_heroku.settings(locals())
+#django_heroku.settings(locals())
 #STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
 

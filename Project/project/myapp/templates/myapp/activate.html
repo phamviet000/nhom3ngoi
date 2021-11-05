@@ -1,0 +1,10 @@
+{% autoescape off%}
+
+Hi {{user.username}}
+Làm ơn chọn vào đường dẫn bên dưới để xác nhận tài khoản của bạn
+Please choose below link, active your account
+http://{{domain}}{% url 'myapp:activate' uidb64=uid token=token %}
+
+
+
+{% endautoescape %}

@@ -30,8 +30,8 @@
           </ul>
           <div class="navbar-List ">
             <div class="navbar-List__item1">
-            <button class="navbar-List__button1 button"><a href="http://127.0.0.1:8000/login/">Sign In</a></button>
-            <button class="navbar-List__button2 button"><a href="http://127.0.0.1:8000/signup/">Sign Up</a></button>
+            <button class="navbar-List__button1 button"><a href="{% url 'myapp:login' %}">Sign In</a></button>
+            <button class="navbar-List__button2 button"><a href="{% url 'myapp:signup' %}">Sign Up</a></button>
           </div>
           </div>
         </nav>
