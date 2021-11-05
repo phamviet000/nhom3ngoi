@@ -1,13 +1,14 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'myapp/assets/favicon.png' %}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-  <link rel="stylesheet" href="assets/css/gird.css">
-  <link rel="stylesheet" href="assets/css/base.css">
-  <link rel="stylesheet" href="assets/css/app.css">
+  <link rel="stylesheet" href="{% static 'myapp/assets/css/base.css' %}">
+  <link rel="stylesheet" href="{% static 'myapp/assets/css/app.css' %}">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
   <title>Python Web Application</title>
@@ -111,7 +112,7 @@
     </div>
         </div>
         <span class="footer-main__copyright">
-          Copyright @2021 - Moclaw. All Rights Reserved.
+          Bản quyền thuộc về team3ngoi
         </span>
       </div>
 

@@ -17,6 +17,8 @@ from .utils import generate_token
 from django.core.mail import EmailMessage
 from django.conf import settings
 from django.contrib.auth import authenticate, login, logout
+from datetime import date
+import datetime
 
 
 def index(request):
@@ -59,7 +61,7 @@ class LoginClass(View):
         user = authenticate(request, username=username, password=password)
         if not user and not context['has_error']:
             messages.add_message(request, messages.ERROR, 'Invalid login')
-            messages.warning(request, 'Invalid login')
+            #messages.warning(request, 'Invalid login')
             context['has_error'] = True
         if context['has_error']:
             return render(request, 'myapp/login.html', status=401, context=context)
@@ -185,7 +187,53 @@ class RequestResetEmailView(View):
         return render(request, 'myapp/request-reset-email.html')
 
 
+class ViewUser(View):
+    def get(self,request):
+        if not request.user.is_authenticated:
+            return redirect('myapp:login')
+        else:
+            return render(request, 'myapp/Profile.html')
 def logoutuser(request):
     logout(request)
     return redirect('myapp:home')
+class edit_profile(View):
+    def get(self,request):
+        return render(request, 'myapp/profile-form.html')
+    def post(self,request):
+        data = MyUser.objects.get(id=request.user.id)
+        if request.method == "POST":
+            first_name = request.POST.get('first_name')
+            last_name = request.POST.get('last_name')
+            phone_number = request.POST.get('phone_number')
+            birdth_day = request.POST.get('birdth_day')
+            sex = request.POST.get('sex')
+
+            data.first_name = first_name
+            data.last_name = last_name
+            data.phone_number = phone_number
+            data.sex = sex
+            today = datetime.datetime.now()
+            date_format = "%Y-%m-%d"
+            try:
+                dt = datetime.datetime.strptime(birdth_day, date_format)
+                data.birdth_day = birdth_day
+                if (dt < today):
+                    day = date.today()
+                    age = int(day.year - dt.year - ((day.month, day.day) < (dt.month, dt.day)))
+                    if(age >= 18):
+                        data.save()
+                        messages.success(request,'Profile has been updated')
+                        return redirect('myapp:profile-form')
+                    else:
+                        messages.warning(request, 'You not 18')
+                        return redirect('myapp:profile-form')
+                else:
+                    messages.warning(request, 'Error Time')
+                    return redirect('myapp:profile-form')
+            except ValueError:
+                data.save()
+                messages.success(request, 'Profile has been updated')
+                return redirect('myapp:profile-form')
+
+        return redirect('myapp:profile-form')
 

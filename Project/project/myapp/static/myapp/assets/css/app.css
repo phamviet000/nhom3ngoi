@@ -102,6 +102,10 @@ body {
   padding: 0 1.5rem 0 0.5rem;
   font-size: 1.5rem;
   color: var(--white-color);
+  margin-left: 8px;
+}
+.navbar-List__namead:hover{
+    color: red;
 }
 .navbar-List__avatar {
   border-radius: 3rem;
@@ -250,6 +254,8 @@ body {
   flex-direction: row;
 }
 .main-header__avatar {
+    width: 200px;
+    margin-left: 10px;
 }
 
 .main-header__info {
@@ -275,7 +281,7 @@ body {
   flex: 1;
 }
 .main-header__profile-info span,
-.main-header__profile-info1 span {
+.main-header__profile-info1 div {
   display: block;
   font-weight: 400;
 }
