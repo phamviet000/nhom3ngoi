@@ -19,19 +19,31 @@
       <div class="grid">
         <nav class="navbar">
           <div class="navbar-List">
-           <a href="#"> <img src=".//assets/img/logo.png" alt="" class="navbar-List__logo"></a>
+           <a href="{% url 'myapp:home' %}"> <img src="{% static 'myapp/img/logo_vlu.png' %}" alt="" class="navbar-List__logo"></a>
           </div>
 
           <ul class="navbar-List">
             <li class="navbar-List__item">
               <a href="{% url 'myapp:home' %}" class="navbar-List__item-link ">HOME</a>
-              <a href="" class="navbar-List__item-link">BLOG</a>
+              <a href="{% url 'myapp:blog' %}" class="navbar-List__item-link">BLOG</a>
             </li>
           </ul>
           <div class="navbar-List ">
             <div class="navbar-List__item1">
-            <button class="navbar-List__button1 button"><a href="{% url 'myapp:login' %}">Sing In</a></button>
-            <button class="navbar-List__button2 button"><a href="{% url 'myapp:signup' %}">Sing Up</a></button>
+              {% if user.username %}
+                 <div class="navbar-List__item1">
+                    <a href="{% url 'myapp:account' %}" class="navbar-List__item12">
+                    <img src="{% static 'myapp/img/sieunhan.jpg' %}" alt="" class="navbar-List__avatar">
+                    <span class="navbar-List__namead">
+                      {{user.username}}
+                    </span>
+                    </a>
+                     <button class="navbar-List__button2 button"><a href="{% url 'myapp:logout' %}">Log out</a></button>
+                 </div>
+              {% else %}
+                <button class="navbar-List__button1 button"><a href="{% url 'myapp:login' %}">Sign In</a></button>
+                <button class="navbar-List__button2 button"><a href="{% url 'myapp:signup' %}">Sign Up</a></button>
+              {% endif %}
           </div>
           </div>
         </nav>
@@ -39,10 +51,10 @@
     </header>
 
     <div class="container__login">
-      <div class="grid">
-
-
-
+      <div class="container__profile">
+        <div class="grid">
+            <img src="{% static 'myapp/img/nangcap.jpg' %}" alt="avatar" class="error-avatar" >
+        </div>
       </div>
     </div>
 

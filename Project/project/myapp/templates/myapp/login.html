@@ -25,7 +25,7 @@
           <ul class="navbar-List">
             <li class="navbar-List__item">
               <a href="{% url 'myapp:home' %}" class="navbar-List__item-link ">HOME</a>
-              <a href="#" class="navbar-List__item-link">BLOG</a>
+              <a href="{% url 'myapp:blog' %}" class="navbar-List__item-link">BLOG</a>
             </li>
           </ul>
           <div class="navbar-List ">
@@ -58,7 +58,7 @@
                     {% endfor %}
               <a href="{% url 'myapp:find-account' %}" class="input__form-text ">Forgot Password</a>
             </div>
-            <button  class="container-login__button button button-login" type="submit" value="login">Login</button>
+            <button  class="container-login__button button button-login btn-viet" type="submit" value="login">Login</button>
             <div class="container-login__footer">
               <spam>Not a member?</spam>
               <a href="{% url 'myapp:signup' %}" >Sign Up</a>

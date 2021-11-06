@@ -25,7 +25,7 @@
           <ul class="navbar-List">
             <li class="navbar-List__item">
               <a href="{% url 'myapp:home' %}" class="navbar-List__item-link ">HOME</a>
-              <a href="" class="navbar-List__item-link">BLOG</a>
+              <a href="{% url 'myapp:blog' %}" class="navbar-List__item-link">BLOG</a>
             </li>
           </ul>
           <div class="navbar-List ">
@@ -73,11 +73,6 @@
               <label class="control-label" for="Phone Number">Phone number</label>
               <input type="text" name="phone_number" placeholder="Enter your Phone Number" class="input__form-control" pattern="[0-9]{10}" title="Number must contain 10 digits only" value="{{user.phone_number}}">
 
-
-              <label class="control-label" for="Birthday">Birthday:  {{user.birdth_day}}</label>
-
-              <input type="date" name="birdth_day" placeholder="" value="{{user.birdth_day}}"   class="input__form-control">
-
               <label class="control-label" for="Birthday">Gender:  {{user.sex}}</label>
               <select name="sex" class="input__form-control" value="{{user.sex}}">
                 <option value="Made">Male</option>
@@ -87,7 +82,7 @@
                 <option value="Order">Order</option>
               </select>
             </div>
-            <button  class="container-login__button button" type="submit" value="Save">
+            <button  class="container-login__button button btn-viet" type="submit" value="Save">
              Save
             </button>
 
