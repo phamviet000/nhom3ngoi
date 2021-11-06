@@ -56,7 +56,7 @@
                       <b style="color:red;">{{ message }}</b>
                     </div>
                     {% endfor %}
-              <a href="#" class="input__form-text ">Forgot Password</a>
+              <a href="{% url 'myapp:find-account' %}" class="input__form-text ">Forgot Password</a>
             </div>
             <button  class="container-login__button button button-login" type="submit" value="login">Login</button>
             <div class="container-login__footer">
