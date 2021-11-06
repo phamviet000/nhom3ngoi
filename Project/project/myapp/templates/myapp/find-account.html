@@ -1,5 +1,5 @@
 {% load static %}
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -28,28 +28,27 @@
               <a href="" class="navbar-List__item-link">BLOG</a>
             </li>
           </ul>
-          <div class="navbar-List ">
-            <div class="navbar-List__item1">
-              <a href="{% url 'myapp:account' %}" class="navbar-List__item12">
-                <img src="{% static 'myapp/img/sieunhan.jpg' %}" alt="" class="navbar-List__avatar">
-                <span class="navbar-List__namead">
-                  {{user.username}}
-                </span>
-              </a>
-              <button class="navbar-List__button2 button"><a href="{% url 'myapp:logout' %}">Log out</a></button>
-            </div>
-          </div>
         </nav>
       </div>
     </header>
 
     <div class="container__login">
       <div class="grid">
-        <form action="">
+        <form action="{% url 'myapp:find-account' %}" method="post">
+          {% csrf_token %}
           <div class="container-login">
             <div class="container-login__Header">
               <h1>Forgetten password Of You</h1>
               <h4>Please commit your email</h4>
+              {% for message in messages %}
+
+        <div class="alert alert-success">
+            <a class="close" href="#" data-dismiss="alert"></a>
+            <b style="color:red;">
+                {{ message }}
+            </b>
+        </div>
+        {% endfor %}
             </div>
             <div class="container-login__input">
               <input type="Email" name="Enter" required  placeholder="Enter your Email" class="input__form-control">
