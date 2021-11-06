@@ -334,3 +334,23 @@ class edit_profile(View):
 
         return redirect('myapp:profile-form')
 
+def change_password(request):
+    context = {}
+
+    if request.method == "POST":
+        current = request.POST.get("passwordnow")
+        new_pas = request.POST.get("password")
+        user = MyUser.objects.get(id=request.user.id)
+        username = user.username
+        check = user.check_password(current)
+        if check == True:
+            user.set_password(new_pas)
+            user.save()
+            context["msz"] = "Password Changed Successfully!"
+            context["col"] = "alert-success"
+            user = MyUser.objects.get(username=username)
+            login(request, user)
+        else:
+            context["msz"] = "Incorrect Current Password"
+            context["col"] = "alert-danger"
+    return render(request, 'myapp/change_password.html', context)

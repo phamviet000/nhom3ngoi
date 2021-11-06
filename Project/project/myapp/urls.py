@@ -12,5 +12,6 @@ urlpatterns = [
     path('set-new-password/<uidb64>/<token>/', views.SetNewPasswordView.as_view(), name='set-new-password'),
     path('account/', ViewUser.as_view(), name='account'),
     path('profile-form', edit_profile.as_view(), name='profile-form'),
+    path('change_password/',views.change_password,name='change_password'),
 
 ]
