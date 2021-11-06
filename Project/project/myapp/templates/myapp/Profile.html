@@ -37,7 +37,7 @@
             </span>
             </a>
             <button class="navbar-List__button2 button"><a href="{% url 'myapp:logout' %}">Log out</a></button>
-          </div>
+            </div>
           </div>
         </nav>
       </div>
@@ -60,11 +60,11 @@
                     <span class="main-header__info">Gender</span>
                   </div>
                   <div class="main-header__profile-info1">
-                    <div class="main-header__info"><p>>>> {{user.first_name}}{{user.last_name}}</p></div>
-                    <div class="main-header__info"><p>>>> {{user.email}}</p></div>
-                    <div class="main-header__info"><p>>>> {{user.phone_number}}</p></div>
-                    <div class="main-header__info"><p>>>> {{user.birdth_day}}</p></div>
-                    <div class="main-header__info"><p>>>> {{user.sex}}</p></div>
+                    <div class="main-header__info"><p>{{user.first_name}}{{user.last_name}}</p></div>
+                    <div class="main-header__info"><p>{{user.email}}</p></div>
+                    <div class="main-header__info"><p>{{user.phone_number}}</p></div>
+                    <div class="main-header__info"><p>{{user.birdth_day}}</p></div>
+                    <div class="main-header__info"><p>{{user.sex}}</p></div>
                   </div>
                 </div>
               </div>
