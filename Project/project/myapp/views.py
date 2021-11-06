@@ -23,6 +23,10 @@ import datetime
 
 def index(request):
     return render(request, 'myapp/home.html')
+class blog(View):
+    def get(self, request):
+        return render(request, 'myapp/Blog.html')
+
 
 class EmailThread(threading.Thread):
 

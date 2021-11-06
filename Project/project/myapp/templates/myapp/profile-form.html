@@ -45,40 +45,50 @@
 
     <div class="container__profile-from">
       <div class="grid">
-        <form action="">
+        <form action="" class="edit" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
           <div class="container-login">
             <div class="container-login__Header">
               <h1>Frofile Form</h1>
+              {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li {% if message.tags %} class="alert alert-sm {{message.tags}}"{% endif %}>
+                        {{message}}
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
             </div>
             <div class="container-login__input">
-              <label class="control-label" for="First_name">First_name</label>
 
-              <input type="text" name="first-name" required  placeholder="Enter your Frist Name" class="input__form-control">
+              <label class="control-label" for="First_name">First name</label>
 
-              <label class="control-label" for="Last_name">Last_name</label>
+              <input type="text" name="first_name"  value="{{user.first_name}}"  placeholder="Enter your Frist Name" class="input__form-control">
 
-              <input type="text" name="Phone-number" required  placeholder="Enter your Last Name" class="input__form-control">
+              <label class="control-label" for="Last_name">Last name</label>
 
-              <label class="control-label" for="Phone Number">Phone_number</label>
-              <input type="text" name="Phone-number" required  placeholder="Enter your Phone Number" class="input__form-control">
+              <input type="text" name="last_name" placeholder="Enter your Last Name" class="input__form-control" value="{{user.last_name}}">
+
+              <label class="control-label" for="Phone Number">Phone number</label>
+              <input type="text" name="phone_number" placeholder="Enter your Phone Number" class="input__form-control" pattern="[0-9]{10}" title="Number must contain 10 digits only" value="{{user.phone_number}}">
 
 
-              <label class="control-label" for="Birthday">Birthday: </label>
+              <label class="control-label" for="Birthday">Birthday:  {{user.birdth_day}}</label>
 
-              <input type="date" name="birth_day" placeholder="Password"   class="input__form-control">
+              <input type="date" name="birdth_day" placeholder="" value="{{user.birdth_day}}"   class="input__form-control">
 
-              <label class="control-label" for="Birthday">Gender: </label>
-              <select name="sex" class="input__form-control" >
-              <option value="Made">Made</option>
-              <option value="Female">Female</option>
-              <option value="Gay">Gay</option>
-              <option value="Les">Les</option>
-              <option value="Order">Order</option>
+              <label class="control-label" for="Birthday">Gender:  {{user.sex}}</label>
+              <select name="sex" class="input__form-control" value="{{user.sex}}">
+                <option value="Made">Male</option>
+                <option value="Female">Female</option>
+                <option value="Gay">Gay</option>
+                <option value="Les">Les</option>
+                <option value="Order">Order</option>
               </select>
             </div>
             <button  class="container-login__button button" type="submit" value="Save">
-              <a href="http://127.0.0.1:5500/Profile.html"> Save
-            </a>
+             Save
             </button>
 
           </div>
